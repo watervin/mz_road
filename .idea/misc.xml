@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/drawable/button.xml" value="0.1" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/drawable/button2.xml" value="0.1" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/drawable/button3.xml" value="0.1" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/drawable/selector_image.xml" value="0.1" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/drawable/selector_pressed.xml" value="0.1" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/drawable/selector_radio_button.xml" value="0.1865" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/drawable/selector_radio_text.xml" value="0.127" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/drawable/selector_selected.xml" value="0.1" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/font/font.xml" value="0.14114583333333333" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_choice_main.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_custom.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_custom_info.xml" value="0.22" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_custom_keyword.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_django_test.xml" value="0.1" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_eat.xml" value="0.22" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_entertainment.xml" value="0.22" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_face.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_feeling_chioce.xml" value="0.22" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_hobby.xml" value="0.22" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_life.xml" value="0.1" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_most.xml" value="0.13125" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_result_main.xml" value="0.15625" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_select_one.xml" value="0.22" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_select_three.xml" value="0.22" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_select_two.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_splash.xml" value="0.22" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/activity_test.xml" value="0.17527173913043478" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/fragment_four.xml" value="0.14719202898550723" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/fragment_one.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/fragment_three.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/layout/fragment_two.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/xml/filepath.xml" value="0.11197916666666667" />
+        <entry key="..\:/Users/Com/Desktop/watervin/flutter/mz_road/app/src/main/res/xml/filepaths.xml" value="0.13072916666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "mzroad",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\Com\\Desktop\\watervin\\flutter\\mz_road\\amplify\\backend\\api\\mzroad\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 7
+    }
+  }
+}
