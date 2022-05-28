@@ -20,28 +20,22 @@ class PostActivity : AppCompatActivity() {
     internal lateinit var apiService: ApiService
     internal lateinit var comment: Call<Json_Test_Java>
     internal lateinit var comment2: Call<ResponseBody>
+    var feelings : String = ""
+    var total : String = ""
 
     internal lateinit var result:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
         type1()
-
     }
-
-
-
-
-
 
 
 
     fun type1(){
         retrofit = Retrofit.Builder().baseUrl(ApiService.API_URL).addConverterFactory(GsonConverterFactory.create()).build()
         apiService = retrofit.create(ApiService::class.java)
-        val version = Json_Test_Java("test5")
+        val version = Json_Test_Java(feelings,total)
 
         comment = apiService.post_json_test_java("json", version)
         comment.enqueue(object : Callback<Json_Test_Java> {
@@ -57,7 +51,7 @@ class PostActivity : AppCompatActivity() {
             }
             override fun onFailure(call: Call<Json_Test_Java>, t: Throwable) {
                 result = "error!!"
-                Log.e("D_Test", "페일!")
+                Log.e("D_Test", "실패!")
             }
         })
     }

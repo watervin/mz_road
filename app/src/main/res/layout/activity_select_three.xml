@@ -10,16 +10,16 @@
 
     <ImageButton
         android:id="@+id/btn_result2"
-        android:layout_width="412dp"
-        android:layout_height="99dp"
-        android:layout_marginBottom="4dp"
+        android:layout_width="301dp"
+        android:layout_height="154dp"
+        android:layout_marginBottom="16dp"
         android:background="@android:color/transparent"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/result" />
+        app:srcCompat="@drawable/result2" />
 
     <RadioGroup
         android:id="@+id/radioGroup11"
@@ -584,6 +584,21 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="132dp"
+        android:text="click!"
+        android:fontFamily="@font/wiggle"
+        android:textColor="#9A3636"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btn_result2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

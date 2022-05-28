@@ -9,16 +9,34 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_choice_main.*
 import kotlinx.android.synthetic.main.activity_main.*
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class ChoiceMain : AppCompatActivity() {
 
-    lateinit var select_position1 : String
-    lateinit var select_position2 : String
-    lateinit var select_position3 : String
-    lateinit var select_position4 : String
-    lateinit var select_position5 : String
-    lateinit var select_position6 : String
+    var select_position1 : String= ""
+     var select_position2 : String= ""
+     var select_position3 : String= ""
+     var select_position4 : String= ""
+     var select_position5 : String = ""
+    var select_position6 : String= ""
 
+    var feelings : String= ""
+
+    var value1 :String =""
+    var value2 :String =""
+
+// post 작업
+
+    internal lateinit var retrofit: Retrofit
+    internal lateinit var apiService: ApiService
+    internal lateinit var comment: Call<Json_Test_Java>
+    internal lateinit var comment2: Call<ResponseBody>
+    internal lateinit var result:String
 
 
 
@@ -39,9 +57,10 @@ class ChoiceMain : AppCompatActivity() {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
 
                 select_position1 = select1[position].toString()
-                Log.i("show", "선택값")
+                Log.i("show", "기쁨 선택값 $select_position1")
 
             }
+
         }
 
         //어댑터 2
@@ -56,7 +75,7 @@ class ChoiceMain : AppCompatActivity() {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
 
                 select_position2 = select2[position].toString()
-                Log.i("show", "선택값")
+                Log.i("show", "분노 선택값 $select_position2")
 
             }
         }
@@ -73,7 +92,7 @@ class ChoiceMain : AppCompatActivity() {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
 
                 select_position3 = select3[position].toString()
-                Log.i("show", "선택값")
+                Log.i("show", "불안 선택값 $select_position3")
 
             }
         }
@@ -92,7 +111,7 @@ class ChoiceMain : AppCompatActivity() {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
 
                 select_position4 = select4[position].toString()
-                Log.i("show", "선택값")
+                Log.i("show", "상처 선택값 $select_position4")
 
             }
         }
@@ -109,7 +128,7 @@ class ChoiceMain : AppCompatActivity() {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
 
                 select_position5 = select5[position].toString()
-                Log.i("show", "선택값")
+                Log.i("show", "슬픔 선택값 $select_position5")
 
             }
         }
@@ -126,15 +145,54 @@ class ChoiceMain : AppCompatActivity() {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
 
                 select_position6 = select6[position].toString()
-                Log.i("show", "선택값")
+                Log.i("show", "중립 선택값 $select_position6")
 
             }
         }
+
+
         btn_next.setOnClickListener {
+
+            feelings = select_position1 + "," + select_position2 + "," + select_position3 + "," + select_position4+","+select_position5+","+select_position6
             val intent = Intent(this, SelectOne::class.java)
+            intent.putExtra("feelings",feelings).toString()
             startActivity(intent)
 
         }
 
+
+
+
+
     }
+
+//    //post
+//    fun type1(){
+//        retrofit = Retrofit.Builder().baseUrl(ApiService.API_URL).addConverterFactory(
+//            GsonConverterFactory.create()).build()
+//        apiService = retrofit.create(ApiService::class.java)
+//        val version = Json_Test_Java("77")
+//
+//        comment = apiService.post_json_test_java("json", version)
+//        comment.enqueue(object : Callback<Json_Test_Java> {
+//
+//            override fun onResponse(call: Call<Json_Test_Java>, response: Response<Json_Test_Java>) {
+//                Log.e("D_Test", "2차")
+//                if (response.isSuccessful) {
+//                    Log.e("post", "성공")
+//                } else {
+//                    val StatusCode = response.code()
+//                    Log.e("post", "Status Code : $StatusCode")
+//                }
+//            }
+//            override fun onFailure(call: Call<Json_Test_Java>, t: Throwable) {
+//                result = "error!!"
+//                Log.e("D_Test", "실패!")
+//            }
+//        })
+//    }
+
 }
+
+
+

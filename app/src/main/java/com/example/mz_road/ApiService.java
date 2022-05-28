@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface ApiService {
 
-    public static final String API_URL = "https://77e0-211-205-15-27.jp.ngrok.io";
+    public static final String API_URL = "https://e743-211-205-15-27.jp.ngrok.io";
 
     /*
     @Path =  (@Path("pk") int pk)에서 pk는 윗줄에 rest api어노테이션 뒤에 사용하는 변수
