@@ -1,13 +1,17 @@
 package com.example.mz_road
 
 import android.content.Intent
+import android.location.Location
+import android.location.LocationRequest
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.example.mz_road.MainActivity
 import com.example.mz_road.R
+import com.google.android.gms.location.FusedLocationProviderClient
 
 class SplashActivity : AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +23,8 @@ class SplashActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         },DURATION)
+
+
 
     }
     companion object {

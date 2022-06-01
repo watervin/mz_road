@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btn_face.setOnClickListener {
-            val intent = Intent(this, FaceActivity::class.java)
+            val intent = Intent(this, Face2Activity::class.java)
             startActivity(intent)
 
         }
@@ -24,8 +24,8 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        btn_django.setOnClickListener {
-            val intent = Intent(this, GetActivity::class.java)
+        btn_location.setOnClickListener {
+            val intent = Intent(this, LocationActivity::class.java)
             startActivity(intent)
 
         }

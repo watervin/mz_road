@@ -2,9 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mz_road">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -15,9 +18,11 @@
         android:supportsRtl="true"
         android:theme="@style/Splash">
         <activity
+            android:name=".LocationActivity"
+            android:exported="false" />
+        <activity
             android:name=".djangoTest"
             android:exported="false" />
-
         <activity
             android:name=".ResultMain"
             android:exported="false" />
@@ -28,16 +33,17 @@
             android:name=".SelectTwo"
             android:exported="false" />
         <activity
+            android:name=".Face2Activity"
+            android:exported="false" />
+        <activity
             android:name=".SelectOne"
             android:exported="false" />
         <activity
             android:name=".PostActivity"
             android:exported="false" />
-
         <activity
             android:name=".ChoiceMain"
             android:exported="false" />
-
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -48,7 +54,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/filepaths" />
         </provider>
-
 
         <activity
             android:name=".FaceActivity"

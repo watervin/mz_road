@@ -1,12 +1,10 @@
 package com.example.mz_road
 
-
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.example.mz_road.ApiService
-import com.example.mz_road.Json_Test_Java
-import com.example.mz_road.R
+import kotlinx.android.synthetic.main.activity_face2.*
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -14,28 +12,48 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+
 class PostActivity : AppCompatActivity() {
+
+    // ai
 
     internal lateinit var retrofit: Retrofit
     internal lateinit var apiService: ApiService
     internal lateinit var comment: Call<Json_Test_Java>
     internal lateinit var comment2: Call<ResponseBody>
+
     var feelings : String = ""
-    var total : String = ""
+    var feelings2 : String = ""
+
 
     internal lateinit var result:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        val secondIntent = intent
+        feelings = secondIntent.getIntExtra("feeling", 0).toString()
+        Log.e("여기는 post 테스트입니다.show", feelings)
+
+        feelings2 = secondIntent.getStringExtra("feeling2").toString()
+        Log.e("show", feelings2)
+
         type1()
+
     }
+
+
+
+
+
 
 
 
     fun type1(){
         retrofit = Retrofit.Builder().baseUrl(ApiService.API_URL).addConverterFactory(GsonConverterFactory.create()).build()
         apiService = retrofit.create(ApiService::class.java)
-        val version = Json_Test_Java(feelings,total)
+        val version = Json_Test_Java(feelings2,"null","null")
 
         comment = apiService.post_json_test_java("json", version)
         comment.enqueue(object : Callback<Json_Test_Java> {
@@ -51,7 +69,7 @@ class PostActivity : AppCompatActivity() {
             }
             override fun onFailure(call: Call<Json_Test_Java>, t: Throwable) {
                 result = "error!!"
-                Log.e("D_Test", "실패!")
+                Log.e("D_Test", "POST 페일!")
             }
         })
     }

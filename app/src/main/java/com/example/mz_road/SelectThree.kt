@@ -1,37 +1,45 @@
 package com.example.mz_road
 
+import android.Manifest
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.pm.PackageManager
+import android.location.Location
+import android.os.Build
 import android.os.Bundle
+import android.os.Looper
 import android.util.Log
-import kotlinx.android.synthetic.main.activity_choice_main.*
-import kotlinx.android.synthetic.main.activity_select_one.*
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import com.google.android.gms.location.*
 import kotlinx.android.synthetic.main.activity_select_three.*
-import kotlinx.android.synthetic.main.activity_select_three.radioGroup
-import kotlinx.android.synthetic.main.activity_select_three.radioGroup11
-import kotlinx.android.synthetic.main.activity_select_three.radioGroup5
-import kotlinx.android.synthetic.main.activity_select_three.radioGroup6
-import kotlinx.android.synthetic.main.activity_select_three.radioGroup7
-import kotlinx.android.synthetic.main.activity_select_three.radioGroup8
-import kotlinx.android.synthetic.main.activity_select_three.radioGroup9
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import kotlin.math.abs
 
 class SelectThree : AppCompatActivity() {
 
+    //retrofit
     internal lateinit var retrofit: Retrofit
     internal lateinit var apiService: ApiService
     internal lateinit var comment: Call<Json_Test_Java>
     internal lateinit var comment2: Call<ResponseBody>
     internal lateinit var result:String
 
+    //위도 경도
+    var mLocationRequest_result:String = ""
+    private var mFusedLocationProviderClient: FusedLocationProviderClient? = null // 현재 위치를 가져오기 위한 변수
+    lateinit var mLastLocation: Location  // 위치 값을 가지고 있는 객체
+    internal lateinit var mLocationRequest: LocationRequest // 위치 정보 요청의 매개변수를 저장하는
+    private val REQUEST_PERMISSION_LOCATION = 10
 
+    //감정
     var feelings : String = ""
-
     var one_nine:String = ""
     var ten_eighteen:String = ""
     var nineteen_25:String =""
@@ -50,12 +58,14 @@ class SelectThree : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_select_three)
 
+        //값 받아오기
         feelings = intent.getStringExtra("feelings").toString()
         one_nine = intent.getStringExtra("one_nine").toString()
         ten_eighteen = intent.getStringExtra("ten_eighteen").toString()
+        mLocationRequest_result = intent.getStringExtra("mLocationRequest_result").toString()
 
 
-
+        Log.i("show", "mLocationRequest_result가 잘 넘어왔는지 확인 $mLocationRequest_result")
         Log.i("show", "SelectTwo 페이지가 잘 넘어왔는지 확인 $feelings ],$one_nine,$ten_eighteen")
 
 
@@ -161,7 +171,16 @@ class SelectThree : AppCompatActivity() {
 
         }
 
+        mLocationRequest =  LocationRequest.create().apply {
 
+            priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+
+        }
+
+//버튼 이벤트 없이 그냥 찾기
+        if (checkPermissionForLocation(this)) {
+            startLocationUpdates()
+        }
 
 
     }
@@ -174,23 +193,40 @@ class SelectThree : AppCompatActivity() {
         apiService = retrofit.create(ApiService::class.java)
 
 
-        val version = Json_Test_Java(feelings,total.toString())
+        val version = Json_Test_Java(feelings.toString(),total.toString(),mLocationRequest_result.toString())
 
+
+        Log.e("show", "$version")
         comment = apiService.post_json_test_java("json", version)
+        Log.e("show", "$comment")
         comment.enqueue(object : Callback<Json_Test_Java> {
 
             override fun onResponse(call: Call<Json_Test_Java>, response: Response<Json_Test_Java>) {
                 Log.e("show", "2차")
                 if (response.isSuccessful) {
                     Log.e("show", "성공!!!!!")
+
                 } else {
                     val StatusCode = response.code()
+                    var a = response
+                    Log.e("show","$a")
                     Log.e("show", "Status Code : $StatusCode")
+                    if (response.code() == 400) {
+                        response.errorBody()?.let { Log.e("show2222", it.string()) }
+                    }
                 }
             }
             override fun onFailure(call: Call<Json_Test_Java>, t: Throwable) {
-                result = "error!!"
-                Log.e("show", "실패....")
+                try {
+                    result = "error!!"
+                    Log.e("show", "SelectThree 실패....")
+                    var a = t.message
+                    Log.e("show","$a")
+                }
+                catch (e : Exception)
+                {
+                    Log.e("show", "$e")
+                }
             }
         })
     }
@@ -216,5 +252,84 @@ class SelectThree : AppCompatActivity() {
                 Log.e("D_Test", "페일!")
             }
         })
+    }
+
+    private fun startLocationUpdates() {
+
+        //FusedLocationProviderClient의 인스턴스를 생성.
+        mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+            && ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return
+        }
+        // 기기의 위치에 관한 정기 업데이트를 요청하는 메서드 실행
+        // 지정한 루퍼 스레드(Looper.myLooper())에서 콜백(mLocationCallback)으로 위치 업데이트를 요청
+        mFusedLocationProviderClient!!.requestLocationUpdates(mLocationRequest, mLocationCallback, Looper.myLooper())
+    }
+
+    // 시스템으로 부터 위치 정보를 콜백으로 받음
+    private val mLocationCallback = object : LocationCallback() {
+        override fun onLocationResult(locationResult: LocationResult) {
+            // 시스템에서 받은 location 정보를 onLocationChanged()에 전달
+            locationResult.lastLocation
+            onLocationChanged(locationResult.lastLocation)
+        }
+    }
+
+    // 시스템으로 부터 받은 위치정보를 화면에 갱신해주는 메소드
+    fun onLocationChanged(location: Location) {
+        mLastLocation = location
+
+        var a = mLastLocation.latitude.toString()
+        var b = abs(mLastLocation.longitude).toString()
+
+        Log.e("여기는 위치 테스트입니다.show", "경도는 $a 위도는 $b ")
+
+        mLocationRequest_result = a+","+b
+
+
+        val intent = Intent(this, SelectThree::class.java)
+
+
+        intent.putExtra("mLocationRequest_result",mLocationRequest_result).toString()
+
+    }
+
+
+
+
+    // 위치 권한이 있는지 확인하는 메서드
+    private fun checkPermissionForLocation(context: Context): Boolean {
+        // Android 6.0 Marshmallow 이상에서는 위치 권한에 추가 런타임 권한이 필요
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (context.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                true
+            } else {
+                // 권한이 없으므로 권한 요청 알림 보내기
+                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), REQUEST_PERMISSION_LOCATION)
+                false
+            }
+        } else {
+            true
+        }
+    }
+
+    // 사용자에게 권한 요청 후 결과에 대한 처리 로직
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == REQUEST_PERMISSION_LOCATION) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                startLocationUpdates()
+
+
+                //여기에 추가
+
+
+            } else {
+                Log.d("ttt", "onRequestPermissionsResult() _ 권한 허용 거부")
+                Toast.makeText(this, "권한이 없어 해당 기능을 실행할 수 없습니다.", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }
