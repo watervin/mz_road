@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: aws.smithy.kotlin:utils-jvm:0.7.3-beta">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/aws.smithy.kotlin/utils-jvm/0.7.3-beta/a5c2d9d2783cee3d40df45a59acbc21300e6c88e/utils-jvm-0.7.3-beta.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/aws.smithy.kotlin/utils-jvm/0.7.3-beta/98065e46e24817395b209a14286d0fc7f7bb7295/utils-jvm-0.7.3-beta-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/aws.smithy.kotlin/utils-jvm/0.7.3-beta/89b80aa0f54a58dd5d8c64d4747449a759c91f61/utils-jvm-0.7.3-beta-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

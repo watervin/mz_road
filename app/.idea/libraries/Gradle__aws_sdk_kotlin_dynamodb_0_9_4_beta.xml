@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: aws.sdk.kotlin:dynamodb:0.9.4-beta">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/aws.sdk.kotlin/dynamodb/0.9.4-beta/cebd2a8c43ffc1498f3f1ee4dd7e28da40328584/dynamodb-0.9.4-beta.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/aws.sdk.kotlin/dynamodb/0.9.4-beta/df1bb96bd9b94d2f7567a967b6cc9d1ea38bc71b/dynamodb-0.9.4-beta-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/aws.sdk.kotlin/dynamodb/0.9.4-beta/e50e441ca544b7f57a24db0f1c9de080fce107e4/dynamodb-0.9.4-beta-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

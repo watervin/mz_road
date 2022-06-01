@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: aws.sdk.kotlin:sns:0.9.4-beta">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/aws.sdk.kotlin/sns/0.9.4-beta/827ad82e8007de642f8ab60bfd51b54138ba914f/sns-0.9.4-beta.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/aws.sdk.kotlin/sns/0.9.4-beta/e0c66df5b5d24b95e8420d869147d03206dc8916/sns-0.9.4-beta-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/aws.sdk.kotlin/sns/0.9.4-beta/a829394a6ec5bd162b02d405f82c532980bc389a/sns-0.9.4-beta-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
