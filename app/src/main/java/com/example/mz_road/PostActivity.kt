@@ -53,7 +53,7 @@ class PostActivity : AppCompatActivity() {
     fun type1(){
         retrofit = Retrofit.Builder().baseUrl(ApiService.API_URL).addConverterFactory(GsonConverterFactory.create()).build()
         apiService = retrofit.create(ApiService::class.java)
-        val version = Json_Test_Java(feelings2,"null","null")
+        val version = Json_Test_Java("null","null",null,feelings2,"null")
 
         comment = apiService.post_json_test_java("json", version)
         comment.enqueue(object : Callback<Json_Test_Java> {

@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_django_test.*
+
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -19,7 +19,7 @@ class GetActivity : AppCompatActivity() {
     internal lateinit var result:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_django_test)
+        setContentView(R.layout.activity_main)
 
         retrofit = Retrofit.Builder().baseUrl(ApiService.API_URL).build()
         apiService = retrofit.create(ApiService::class.java)
@@ -38,11 +38,7 @@ class GetActivity : AppCompatActivity() {
                 Log.e("D_Test", "페일!")
             }
         })
-        btn_post.setOnClickListener{
-            val intent = Intent(this, PostActivity::class.java)
-            startActivity(intent)
 
-        }
     }
 
 }

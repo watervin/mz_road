@@ -159,16 +159,25 @@ class SelectThree : AppCompatActivity() {
 
 
         btn_result2.setOnClickListener {
-            nineteen_25 = nineteen+twenty+twenty_one+twenty_two+twenty_three+twenty_four+twenty_five
-            total=one_nine+ten_eighteen+nineteen_25
 
-            Log.i("show", "19-25 잘 들어갔을까~ $nineteen_25")
-            Log.i("show", " [ 총 테스트 ] 뭐하는지 : $feelings,  총 점수 25개 $total "  )
+            if ((nineteen =="") || (twenty=="") || (twenty_one=="") || (twenty_two=="") || (twenty_three=="") || (twenty_four=="") || (twenty_five==""))
+            {
 
-            type1()
-            val intent = Intent(this, ResultMain::class.java)
-            startActivity(intent)
+                Toast.makeText(this@SelectThree, "선택 하지 않은 항목이 있습니다. ", Toast.LENGTH_SHORT).show()
 
+            }
+        else {
+                nineteen_25 =
+                    nineteen + twenty + twenty_one + twenty_two + twenty_three + twenty_four + twenty_five
+                total = one_nine + ten_eighteen + nineteen_25
+
+                Log.i("show", "19-25 잘 들어갔을까~ $nineteen_25")
+                Log.i("show", " [ 총 테스트 ] 뭐하는지 : $feelings,  총 점수 25개 $total ")
+
+                type1()
+                val intent = Intent(this, ResultMain::class.java)
+                startActivity(intent)
+            }
         }
 
         mLocationRequest =  LocationRequest.create().apply {
@@ -192,8 +201,9 @@ class SelectThree : AppCompatActivity() {
             GsonConverterFactory.create()).build()
         apiService = retrofit.create(ApiService::class.java)
 
+        Log.e("show 여기를 주목!!!", "$mLocationRequest_result")
 
-        val version = Json_Test_Java(feelings.toString(),total.toString(),mLocationRequest_result.toString())
+        val version = Json_Test_Java(feelings.toString(),total.toString(),mLocationRequest_result.toString(),"null","null")
 
 
         Log.e("show", "$version")

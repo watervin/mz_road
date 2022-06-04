@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_choice_main.*
 import kotlinx.android.synthetic.main.activity_choice_main.btn_next
 import kotlinx.android.synthetic.main.activity_select_one.*
@@ -48,6 +49,8 @@ class SelectTwo : AppCompatActivity() {
                 R.id.ans10_6 -> ten = "6"
                 R.id.ans10_7 -> ten = "7"
             }
+            Log.i("radio", "10번 $ten")
+
         }
 
         //11번
@@ -61,6 +64,8 @@ class SelectTwo : AppCompatActivity() {
                 R.id.ans11_6 -> eleven = "6"
                 R.id.ans11_7 -> eleven = "7"
             }
+            Log.i("radio", "11번 $eleven")
+
         }
 
         //12번
@@ -74,6 +79,8 @@ class SelectTwo : AppCompatActivity() {
                 R.id.ans12_6 -> twelve = "6"
                 R.id.ans12_7 -> twelve = "7"
             }
+            Log.i("radio", "12번 $twelve")
+
         }
 
         //13번
@@ -87,6 +94,8 @@ class SelectTwo : AppCompatActivity() {
                 R.id.ans13_6 -> thirteen = "6"
                 R.id.ans13_7 -> thirteen = "7"
             }
+            Log.i("radio", "13번 $thirteen")
+
         }
         //14번
         radioGroup8.setOnCheckedChangeListener{ group, checkedId ->
@@ -99,6 +108,7 @@ class SelectTwo : AppCompatActivity() {
                 R.id.ans14_6 -> fourteen = "6"
                 R.id.ans14_7 -> fourteen = "7"
             }
+            Log.i("radio", "14번 $fourteen")
         }
         //15
         radioGroup9.setOnCheckedChangeListener{ group, checkedId ->
@@ -111,6 +121,8 @@ class SelectTwo : AppCompatActivity() {
                 R.id.ans15_6 -> fifteen = "6"
                 R.id.ans15_7 -> fifteen = "7"
             }
+            Log.i("radio", "15번 $fifteen")
+
         }
         //16번
         radioGroup11.setOnCheckedChangeListener{ group, checkedId ->
@@ -123,6 +135,7 @@ class SelectTwo : AppCompatActivity() {
                 R.id.ans16_6 -> sixteen = "6"
                 R.id.ans16_7 -> sixteen = "7"
             }
+            Log.i("radio", "16번 $sixteen")
         }
 
         //17번
@@ -136,9 +149,11 @@ class SelectTwo : AppCompatActivity() {
                 R.id.ans17_6 -> seveneteen = "6"
                 R.id.ans17_7 -> seveneteen = "7"
             }
+            Log.i("radio", "17번 $seveneteen")
+
         }
         //18번
-        radioGroup12.setOnCheckedChangeListener{ group, checkedId ->
+        radioGroup13.setOnCheckedChangeListener{ group, checkedId ->
             when(checkedId){
                 R.id.ans18_1 -> eighteen = "1"
                 R.id.ans18_2 -> eighteen = "2"
@@ -148,25 +163,36 @@ class SelectTwo : AppCompatActivity() {
                 R.id.ans18_6 -> eighteen = "6"
                 R.id.ans18_7 -> eighteen = "7"
             }
+            Log.i("radio", "18번 $eighteen")
+
         }
 
 
 
         btn_next.setOnClickListener {
 
-            ten_eighteen = ten+eleven+twelve+thirteen+fourteen+fifteen+sixteen+seveneteen+eighteen
-            Log.i("show", "10-18 잘 들어갔을까~ $ten_eighteen")
-            Log.i("show", "여기를 주목!")
 
-            Log.i("show", "$feelings,$one_nine,$ten_eighteen")
-            val intent = Intent(this, SelectThree::class.java)
+            if ((ten =="") || (eleven=="") || (twelve=="") || (thirteen=="") || (fourteen=="") || (sixteen=="") || (seveneteen=="") || (eighteen==""))
+            {
 
-            intent.putExtra("feelings",feelings).toString()
-            intent.putExtra("one_nine",one_nine).toString()
-            intent.putExtra("ten_eighteen",ten_eighteen).toString()
+                Toast.makeText(this@SelectTwo, "선택 하지 않은 항목이 있습니다. ", Toast.LENGTH_SHORT).show()
 
-            startActivity(intent)
+            }
+            else {
+                ten_eighteen =
+                    ten + eleven + twelve + thirteen + fourteen + fifteen + sixteen + seveneteen + eighteen
+                Log.i("show", "10-18 잘 들어갔을까~ $ten_eighteen")
+                Log.i("show", "여기를 주목!")
 
+                Log.i("show", "$feelings,$one_nine,$ten_eighteen")
+                val intent = Intent(this, SelectThree::class.java)
+
+                intent.putExtra("feelings", feelings).toString()
+                intent.putExtra("one_nine", one_nine).toString()
+                intent.putExtra("ten_eighteen", ten_eighteen).toString()
+
+                startActivity(intent)
+            }
         }
 
 
