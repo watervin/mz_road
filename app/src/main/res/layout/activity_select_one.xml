@@ -1065,12 +1065,12 @@
 
     <Button
         android:id="@+id/btn_next"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
         android:background="@drawable/button"
         android:fontFamily="@font/scdream"
-        android:text="다음 페이지로 ->"
-        android:textSize="12sp"
+        android:text="다음 (2/4)"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

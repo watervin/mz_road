@@ -24,7 +24,9 @@ class ResultMain : AppCompatActivity() {
     internal lateinit var comment: Call<ResponseBody>
     internal lateinit var result:String
     lateinit var final_result : String
-    var tv1: TextView? = null
+    lateinit var final_result2 : Array<String>
+    var check = "123"
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,10 +36,10 @@ class ResultMain : AppCompatActivity() {
 
         btn_test.setOnClickListener {
             val intent = Intent(this, ResultMain2::class.java)
+            intent.putExtra("final_result",final_result2[0]).toString()
             startActivity(intent)
 
         }
-
 
 
 
@@ -47,21 +49,24 @@ class ResultMain : AppCompatActivity() {
         comment = apiService.get_Test("json")
         comment.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                val str = response.body()!!.string() as String
+                var dataresult = Gson().fromJson<DataResult>(str, DataResult::class.java)
+                final_result = dataresult.first().final_result
+                Log.d("main_test", "show 값 보기 $final_result")
 
-                    val str = response.body()!!.string() as String
-                    var dataresult = Gson().fromJson<DataResult>(str, DataResult::class.java)
-                    final_result = dataresult.last().tendencies
+                final_result2 = final_result.split(' ').toTypedArray()
+                Log.d("main_test", "show 값 보기 ${final_result2[0]}")
 
-                    Log.e("show", "show 값 보기 $final_result")
-                    val jsonArray = JSONArray(str)
+                if(final_result2[0] == "영화관"){
+                   check = "movie"
+                }
+                Log.d("main_test", "show 값 보기 $check")
 
-//                    for (i in 0 until jsonArray.length()){
-//                        val jsonObject = jsonArray.getJSONObject(i)
-//
-//                        Log.e("d_show value => ",jsonObject.get("filed_name").toString())
-//
+                if(final_result2[0] == "게임(모바일·PC·콘솔)"){
+                    check = "game"
+                }
 
-                textView4.text = final_result
+                btn1.text = final_result
 
             }
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
@@ -71,6 +76,32 @@ class ResultMain : AppCompatActivity() {
 
             }
         })
+
+        btn1.setOnClickListener {
+            Log.d("main_test", "real check 값 보기 $check")
+
+            if(check == "movie"){
+                val intent = Intent(this, Movie::class.java)
+                intent.putExtra("final_result",final_result2[0]).toString()
+                startActivity(intent)
+            }
+            else if(check == "game"){
+                val intent = Intent(this, Game::class.java)
+                intent.putExtra("final_result",final_result2[0]).toString()
+                startActivity(intent)
+            }
+
+
+            else {
+                val intent = Intent(this, KakaoMap::class.java)
+                intent.putExtra("final_result", final_result2[0]).toString()
+                startActivity(intent)
+            }
+
+
+
+        }
+
 
 
 

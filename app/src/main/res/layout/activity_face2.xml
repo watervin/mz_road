@@ -8,8 +8,8 @@
 
     <ImageButton
         android:id="@+id/btn_result"
-        android:layout_width="363dp"
-        android:layout_height="86dp"
+        android:layout_width="449dp"
+        android:layout_height="83dp"
         android:layout_marginBottom="4dp"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
@@ -39,7 +39,7 @@
         android:layout_centerVertical="true"
         android:layout_marginBottom="100dp"
         android:background="@drawable/button"
-        android:text="사진 다시 찍기"
+        android:text="사진 찍기"
         android:textAllCaps="false"
         android:textSize="21sp"
         android:textStyle="bold"

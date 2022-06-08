@@ -201,9 +201,8 @@ class SelectThree : AppCompatActivity() {
             GsonConverterFactory.create()).build()
         apiService = retrofit.create(ApiService::class.java)
 
-        Log.e("show 여기를 주목!!!", "$mLocationRequest_result")
 
-        val version = Json_Test_Java(feelings.toString(),total.toString(),mLocationRequest_result.toString(),"null","null")
+        val version = Json_Test_Java(feelings.toString(),total.toString(),"null","null")
 
 
         Log.e("show", "$version")

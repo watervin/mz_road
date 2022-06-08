@@ -1,6 +1,7 @@
 package com.example.mz_road
 
 import android.content.Intent
+import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,8 @@ import android.util.Base64
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
+import java.security.Signature
 
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +20,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        getAppKeyHash()
+
+        getHashKey()
 
         btn_face.setOnClickListener {
             val intent = Intent(this, Face2Activity::class.java)
@@ -29,25 +33,30 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+        btn_kakao.setOnClickListener {
+            val intent = Intent(this, KakaoMap::class.java)
+            startActivity(intent)
 
+        }
 
     }
-    //해시 키 얻어내는 코드
-//    private fun getAppKeyHash() {
-//        try {
-//            val info =
-//                packageManager.getPackageInfo(packageName, PackageManager.GET_SIGNATURES)
-//            for (signature in info.signatures) {
-//                var md: MessageDigest
-//                md = MessageDigest.getInstance("SHA")
-//                md.update(signature.toByteArray())
-//                val something = String(Base64.encode(md.digest(), 0))
-//                Log.e("Hash key", something)
-//            }
-//        } catch (e: Exception) {
-//
-//            Log.e("name not found", e.toString())
-//        }
-//    }
+    private fun getHashKey() {
+        var packageInfo: PackageInfo? = null
+        try {
+            packageInfo = packageManager.getPackageInfo(packageName, PackageManager.GET_SIGNATURES)
+        } catch (e: PackageManager.NameNotFoundException) {
+            e.printStackTrace()
+        }
+        if (packageInfo == null) Log.e("KeyHash", "KeyHash:null")
+        for (signature in packageInfo!!.signatures) {
+            try {
+                val md: MessageDigest = MessageDigest.getInstance("SHA")
+                md.update(signature.toByteArray())
+                Log.d("KeyHash", Base64.encodeToString(md.digest(), Base64.DEFAULT))
+            } catch (e: NoSuchAlgorithmException) {
+                Log.e("KeyHash", "Unable to get MessageDigest. signature=$signature", e)
+            }
+        }
+    }
 }
 

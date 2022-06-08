@@ -8,18 +8,21 @@
     tools:context=".SelectThree">
 
 
-    <ImageButton
+    <Button
         android:id="@+id/btn_result2"
-        android:layout_width="301dp"
-        android:layout_height="154dp"
-        android:layout_marginBottom="44dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitXY"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/scdream"
+        android:text="결과보기 (4/4)"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/result2" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup11"
+        app:layout_constraintVertical_bias="1.0" />
 
     <RadioGroup
         android:id="@+id/radioGroup11"

@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="my_array">
-        <item>글쓰기</item>
-        <item>독서(도서관·책/잡지보기)</item>
-        <item>영화관 가기 </item> //구현
-        <item>만화·애니</item>
-        <item>TV 시청</item>
         <item>OTT 시청</item>
+        <item>TV 시청</item>
+        <item>게임(모바일·PC·콘솔)</item>
         <item>그림 그리기</item>
-        <item>악기 연주</item>
-        <item>콘서트·공연·전시회 관람</item>
-        <item>쇼핑몰 가기</item>
-        <item>인터넷 쇼핑</item>
+        <item>글쓰기</item>
+        <item>낚시</item>
+        <item>노래방 가기</item>
+        <item>독서(도서관·책/잡지보기)</item>
+        <item>만화·애니</item> //필요
+        <item>맛집 탐방</item>
         <item>미용(미용실·네일아트 등)</item>
-        <item>셀프 인테리어</item>
+        <item>반려 동물 활동</item>
+        <item>보드 게임(장기·바둑 포함)</item>
+        <item>사진 찍기</item>
+        <item>생활공예(라탄·도자기 클래스 포함)</item>
+        <item>쇼핑몰 가기</item>
+        <item>수집 활동(곤충·돌 등)</item>
+        <item>스포츠 관람(야구장·TV 등)</item>
+        <item>스포츠 활동(등산·테니스·축구 등)</item>
+        <item>악기 연주</item>
+        <item>여행(해외·국내)</item>
+        <item>영화관 가기</item>
         <item>요리(쿠킹 클래스 등)</item>
         <item>원예·재배</item>
-        <item>게임(모바일·PC·콘솔)</item>
-        <item>스포츠 활동(등산·테니스·축구 등)</item>
-        <item>스포츠 관람(야구장·TV 등)</item>
-        <item>반려 동물 활동</item>
-        <item>사진 찍기</item>
-        <item>여행(해외·국내)</item>
-        <item>맛집 탐방</item>
-        <item>보드게임(장기·바둑 포함)</item>
-        <item>낚시</item>
-        <item>생활공예(라탄·도자기 클래스 포함)</item>
-        <item>수집 활동(곤충·돌·포켓몬 등)</item>
         <item>음주</item>
-        <item>노래방 가기</item>
-        <item>자기 개발</item>
         <item>인터넷 서치</item>
+        <item>인터넷 쇼핑</item>
+        <item>자기 개발</item>
+        <item>콘서트·공연·전시회 관람</item>
+
 
     </string-array>
 </resources>

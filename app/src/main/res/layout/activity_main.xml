@@ -2,8 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/white"
     android:fadingEdge="none"
     android:requiresFadingEdge="none"
@@ -11,7 +11,7 @@
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="393dp"
+        android:layout_width="0dp"
         android:layout_height="835dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,64 +21,36 @@
 
         <Button
             android:id="@+id/btn_face"
-            android:layout_width="207dp"
-            android:layout_height="170dp"
-            android:layout_marginLeft="10dp"
+            android:layout_width="380dp"
+            android:layout_height="200dp"
             android:layout_weight="1"
             android:background="@drawable/button"
+            android:drawableEnd="@drawable/made_face"
+            android:drawingCacheQuality="auto"
             android:fontFamily="@font/scdream"
             android:text="얼굴 인식"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/lottieView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.539" />
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/lottieView"
-            android:layout_width="161dp"
-            android:layout_height="171dp"
-            android:layout_marginEnd="8dp"
+            android:textSize="40sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.523"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/phone2" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btn_custom"
-            android:layout_width="207dp"
-            android:layout_height="156dp"
-            android:layout_marginEnd="8dp"
+            android:layout_width="380dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="13dp"
             android:layout_marginBottom="80dp"
             android:layout_weight="1"
             android:background="@drawable/button"
+            android:drawableEnd="@drawable/made_touch1"
             android:fontFamily="@font/scdream"
             android:text="사용자 선택"
-            android:textSize="20sp"
+            android:textSize="40sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lottieView"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/lottieView2"
-            android:layout_width="161dp"
-            android:layout_height="171dp"
-            android:layout_marginEnd="28dp"
-            android:layout_marginBottom="60dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btn_custom"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_face"
-            app:layout_constraintVertical_bias="0.833"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/choose" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_face" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -103,6 +75,17 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.144"
             app:srcCompat="@drawable/main" />
+
+        <Button
+            android:id="@+id/btn_kakao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_custom" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

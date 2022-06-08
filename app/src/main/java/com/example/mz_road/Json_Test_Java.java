@@ -10,20 +10,14 @@ public class Json_Test_Java {
 
     public String feelings_action;
     public String tendencies;
-    public String mLocationRequest_result;
     public String facial_result;
     public String final_result;
 
 
 
-
-
-
-
-    public Json_Test_Java(String feelings_action,String tendencies,String mLocationRequest_result,String facial_result, String final_result) {
+    public Json_Test_Java(String feelings_action,String tendencies,String facial_result, String final_result) {
         this.feelings_action = feelings_action;
         this.tendencies = tendencies;
-        this.mLocationRequest_result = mLocationRequest_result;
         this.facial_result = facial_result;
         this.final_result =final_result;
 ;
@@ -38,9 +32,6 @@ public class Json_Test_Java {
     public String get_tendencies() {
         return tendencies;
     }
-    public String get_mLocationRequest_result() {
-        return mLocationRequest_result;
-    }
     public String get_facial_result() {
         return facial_result;
     }
@@ -49,11 +40,10 @@ public class Json_Test_Java {
     }
 
 
-    public void setTest(String feelings_action,String tendencies,String mLocationRequest_result,String facial_result, String final_result) {
+    public void setTest(String feelings_action,String tendencies,String facial_result, String final_result) {
 
         this.feelings_action = feelings_action;
         this.tendencies = tendencies;
-        this.mLocationRequest_result = mLocationRequest_result;
         this.facial_result = facial_result;
         this.final_result = final_result;
     }
