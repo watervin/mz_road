@@ -55,19 +55,26 @@
         <entry key="app/src/main/res/layout/activity_choice_main.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/activity_crawling.xml" value="0.1188542112013681" />
         <entry key="app/src/main/res/layout/activity_django_test.xml" value="0.22056159420289856" />
-        <entry key="app/src/main/res/layout/activity_face2.xml" value="0.22056159420289856" />
-        <entry key="app/src/main/res/layout/activity_game.xml" value="0.1188542112013681" />
+        <entry key="app/src/main/res/layout/activity_face2.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_game.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_kakaomap.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_location.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19293478260869565" />
-        <entry key="app/src/main/res/layout/activity_movie.xml" value="0.11799914493373237" />
-        <entry key="app/src/main/res/layout/activity_result_main.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_result_main2.xml" value="0.1333903377511757" />
+        <entry key="app/src/main/res/layout/activity_movie.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_movie2.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_movie3.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_result_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_result_main2.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_result_main_face.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_select_one.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_select_three.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/activity_select_two.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.13210773834972211" />
+        <entry key="app/src/main/res/layout/activity_wait.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_web_view.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/movie_item.xml" value="0.1228467815049864" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
         <entry key="app/src/main/res/xml/network_security_config.xml" value="0.13125267208208635" />
       </map>
     </option>

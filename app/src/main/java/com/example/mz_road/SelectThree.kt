@@ -13,7 +13,16 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.*
+import kotlinx.android.synthetic.main.activity_choice_main.*
+import kotlinx.android.synthetic.main.activity_select_one.*
 import kotlinx.android.synthetic.main.activity_select_three.*
+import kotlinx.android.synthetic.main.activity_select_three.radioGroup
+import kotlinx.android.synthetic.main.activity_select_three.radioGroup11
+import kotlinx.android.synthetic.main.activity_select_three.radioGroup5
+import kotlinx.android.synthetic.main.activity_select_three.radioGroup6
+import kotlinx.android.synthetic.main.activity_select_three.radioGroup7
+import kotlinx.android.synthetic.main.activity_select_three.radioGroup8
+import kotlinx.android.synthetic.main.activity_select_three.radioGroup9
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -158,15 +167,13 @@ class SelectThree : AppCompatActivity() {
         }
 
 
-        btn_result2.setOnClickListener {
+        btn_next1.setOnClickListener {
 
-            if ((nineteen =="") || (twenty=="") || (twenty_one=="") || (twenty_two=="") || (twenty_three=="") || (twenty_four=="") || (twenty_five==""))
-            {
+            if ((nineteen == "") || (twenty == "") || (twenty_one == "") || (twenty_two == "") || (twenty_three == "") || (twenty_four == "") || (twenty_five == "")) {
 
                 Toast.makeText(this@SelectThree, "선택 하지 않은 항목이 있습니다. ", Toast.LENGTH_SHORT).show()
 
-            }
-        else {
+            } else {
                 nineteen_25 =
                     nineteen + twenty + twenty_one + twenty_two + twenty_three + twenty_four + twenty_five
                 total = one_nine + ten_eighteen + nineteen_25

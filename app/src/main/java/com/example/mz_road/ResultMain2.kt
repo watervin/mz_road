@@ -47,7 +47,10 @@ class ResultMain2 : AppCompatActivity() {
             startActivity(intent)
 
         }
-
+        btn_start2.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
 }
     override fun onBackPressed() {

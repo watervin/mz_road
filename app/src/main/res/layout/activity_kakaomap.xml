@@ -4,21 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#F8F6EE"
     tools:context=".KakaoMap">
+
+    <ImageButton
+        android:id="@+id/btn_start"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="244dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/btn_location" />
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="19dp"
-        android:fontFamily="@font/scdream"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/sub" />
 
     <TextView
         android:id="@+id/textView6"
@@ -40,7 +50,6 @@
         android:layout_marginBottom="324dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -49,6 +58,7 @@
 
         android:layout_height="46dp"
         android:fontFamily="@font/goolim"
+        android:gravity="center|start"
         android:text="내 위치보기를 클릭해주세요"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -56,7 +66,7 @@
         app:layout_constraintHorizontal_bias="0.866"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mapView"
-        app:layout_constraintVertical_bias="0.82" />
+        app:layout_constraintVertical_bias="0.798" />
 
     <TextView
         android:id="@+id/textview1"
@@ -64,6 +74,7 @@
 
         android:layout_height="46dp"
         android:fontFamily="@font/goolim"
+        android:gravity="center|start"
         android:text="내 위치보기를 클릭해주세요"
         android:textSize="20sp"
         android:visibility="visible"
@@ -72,21 +83,21 @@
         app:layout_constraintHorizontal_bias="0.838"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mapView"
-        app:layout_constraintVertical_bias="0.601" />
+        app:layout_constraintVertical_bias="0.553" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="50dp"
         android:fontFamily="@font/goolim"
 
         android:text="1 )"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toStartOf="@+id/textview1"
-        app:layout_constraintHorizontal_bias="0.786"
+        app:layout_constraintHorizontal_bias="0.774"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -94,47 +105,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="116dp"
-        android:fontFamily="@font/goolim"
+        android:layout_marginTop="108dp"
+        android:fontFamily="@font/font2"
         android:text="내 위치 근처 List"
         android:textColor="#8F484B"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mapView" />
-
-    <Button
-        android:id="@+id/btn_start"
-        android:layout_width="200dp"
-
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/button"
-        android:fontFamily="@font/scdream"
-        android:text="내 위치 근처보기"
-
-        app:layout_constraintBottom_toTopOf="@+id/textView17"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mapView"
-        app:layout_constraintVertical_bias="0.486" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:fontFamily="@font/goolim"
+        android:fontFamily="@font/font2"
 
         android:text="현재 내 위치 보기"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/mapView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

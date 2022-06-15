@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_choice_main.*
 import kotlinx.android.synthetic.main.activity_face2.*
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -41,6 +42,11 @@ class PostActivity : AppCompatActivity() {
 
         type1()
 
+
+            val intent = Intent(this, WaitActivity::class.java)
+            startActivity(intent)
+
+
     }
 
 
@@ -53,7 +59,7 @@ class PostActivity : AppCompatActivity() {
     fun type1(){
         retrofit = Retrofit.Builder().baseUrl(ApiService.API_URL).addConverterFactory(GsonConverterFactory.create()).build()
         apiService = retrofit.create(ApiService::class.java)
-        val version = Json_Test_Java("null","null",null,feelings2)
+        val version = Json_Test_Java("null","null",feelings2,null)
 
         comment = apiService.post_json_test_java("json", version)
         comment.enqueue(object : Callback<Json_Test_Java> {

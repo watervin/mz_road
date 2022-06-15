@@ -166,32 +166,6 @@ class ChoiceMain : AppCompatActivity() {
 
     }
 
-//    //post
-//    fun type1(){
-//        retrofit = Retrofit.Builder().baseUrl(ApiService.API_URL).addConverterFactory(
-//            GsonConverterFactory.create()).build()
-//        apiService = retrofit.create(ApiService::class.java)
-//        val version = Json_Test_Java("77")
-//
-//        comment = apiService.post_json_test_java("json", version)
-//        comment.enqueue(object : Callback<Json_Test_Java> {
-//
-//            override fun onResponse(call: Call<Json_Test_Java>, response: Response<Json_Test_Java>) {
-//                Log.e("D_Test", "2차")
-//                if (response.isSuccessful) {
-//                    Log.e("post", "성공")
-//                } else {
-//                    val StatusCode = response.code()
-//                    Log.e("post", "Status Code : $StatusCode")
-//                }
-//            }
-//            override fun onFailure(call: Call<Json_Test_Java>, t: Throwable) {
-//                result = "error!!"
-//                Log.e("D_Test", "실패!")
-//            }
-//        })
-//    }
-
 }
 
 

@@ -20,10 +20,16 @@
         android:theme="@style/Splash"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Game"
+            android:name=".WaitActivity"
             android:exported="false" />
         <activity
-            android:name=".Movie"
+            android:name=".ResultMainFace"
+            android:exported="false" />
+        <activity
+            android:name=".Movie2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Game"
             android:exported="false" />
 
         <activity

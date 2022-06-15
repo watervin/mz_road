@@ -10,7 +10,6 @@ import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
-import java.security.Signature
 
 
 class MainActivity : AppCompatActivity() {
@@ -33,11 +32,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
-        btn_kakao.setOnClickListener {
-            val intent = Intent(this, KakaoMap::class.java)
-            startActivity(intent)
 
-        }
+
 
     }
     private fun getHashKey() {

@@ -10,13 +10,13 @@ import java.util.List;
 
 public interface ApiService {
 
-    public static final String API_URL = "https://5815-211-205-15-15.ngrok.io";
+    public static final String API_URL = "https://bf60-211-205-15-15.ngrok.io";
 
     /*
     @Path =  (@Path("pk") int pk)에서 pk는 윗줄에 rest api어노테이션 뒤에 사용하는 변수
     @Query =  (@Query("example") String test)에서 test는 변수, 입력을 aaaa로 받았을때 url은  xxxxx?example=aaaa
     @Field =  (@Field("email") String test)에서 test는 데이터베이스의 필드 하나에 해당함 즉 email 레코드의 필드 하나 값
-    @FormUrlEncoded = 입력된 스트링이나 해시맵을을데이터베이스에 반영될수 있도록 인코딩해줌
+    @FormUrlEncoded = 입력된 스트링이나 해시맵을을데이터베이스에 반영될수 있도록 인%5코딩해줌
     */
 
     @GET("tests/")

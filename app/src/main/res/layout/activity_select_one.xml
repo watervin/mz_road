@@ -4,9 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#F8F6EE"
     tools:context=".SelectOne">
 
+
+    <ImageButton
+        android:id="@+id/btn_next"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="35dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/button_next" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sub" />
 
     <TextView
         android:id="@+id/textView34"
@@ -15,6 +39,9 @@
         android:layout_marginLeft="2dp"
         android:layout_marginTop="37dp"
         android:text="이타적인"
+        android:textColor="#86A97E"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/radioGroup13"
@@ -223,38 +250,13 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="35dp"
         android:text="친절한"
+        android:textColor="#86A97E"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/radioGroup11"
         app:layout_constraintTop_toBottomOf="@+id/textView28" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="19dp"
-        android:fontFamily="@font/scdream"
-        app:layout_constraintBottom_toTopOf="@+id/textView14"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/goolim"
-        android:text="나의 성향"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.191" />
 
 
     <RadioGroup
@@ -914,6 +916,9 @@
         android:layout_marginTop="232dp"
         android:layout_marginEnd="2dp"
         android:text="게으른"
+        android:textColor="#86A97E"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toStartOf="@+id/radioGroup5"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -927,6 +932,9 @@
         android:layout_marginTop="35dp"
         android:layout_marginEnd="2dp"
         android:text="조용한"
+        android:textColor="#86A97E"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toStartOf="@+id/radioGroup6"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -939,6 +947,9 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="232dp"
         android:text="근면한"
+        android:textColor="#86A97E"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/radioGroup5"
@@ -951,6 +962,9 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="35dp"
         android:text="말 많은"
+        android:textColor="#86A97E"
+        android:textStyle="bold"
+
         app:layout_constraintStart_toEndOf="@+id/radioGroup6"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
@@ -961,6 +975,9 @@
         android:layout_marginTop="35dp"
         android:layout_marginEnd="2dp"
         android:text="주장이 약한"
+        android:textColor="#86A97E"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toStartOf="@+id/radioGroup"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -974,6 +991,9 @@
         android:layout_marginTop="35dp"
         android:backgroundTint="#120101"
         android:text="주장이 강한"
+        android:textColor="#86A97E"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/radioGroup"
@@ -986,6 +1006,9 @@
         android:layout_marginTop="35dp"
         android:layout_marginEnd="2dp"
         android:text="모험적이지 않은"
+        android:textColor="#86A97E"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toStartOf="@+id/radioGroup7"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -998,6 +1021,9 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="35dp"
         android:text="모험적인"
+        android:textColor="#86A97E"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/radioGroup7"
@@ -1010,6 +1036,9 @@
         android:layout_marginTop="35dp"
         android:layout_marginEnd="2dp"
         android:text="정열적이지 않은"
+        android:textColor="#86A97E"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toStartOf="@+id/radioGroup8"
         app:layout_constraintHorizontal_bias="0.912"
         app:layout_constraintStart_toStartOf="parent"
@@ -1022,6 +1051,9 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="35dp"
         android:text="정렬적인"
+        android:textColor="#86A97E"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/radioGroup8"
@@ -1034,6 +1066,9 @@
         android:layout_marginTop="35dp"
         android:layout_marginEnd="2dp"
         android:text="소심한"
+        android:textColor="#86A97E"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toStartOf="@+id/radioGroup9"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -1046,6 +1081,9 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="35dp"
         android:text="대담한"
+        android:textColor="#86A97E"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/radioGroup9"
@@ -1058,25 +1096,13 @@
         android:layout_marginTop="35dp"
         android:layout_marginEnd="2dp"
         android:text="불친절한"
+        android:textColor="#86A97E"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toStartOf="@+id/radioGroup11"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView27" />
-
-    <Button
-        android:id="@+id/btn_next"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:background="@drawable/button"
-        android:fontFamily="@font/scdream"
-        android:text="다음 (2/4)"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup13"
-        app:layout_constraintVertical_bias="0.388" />
 
     <TextView
         android:id="@+id/textView31"
@@ -1084,6 +1110,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="비협조적인"
+        android:textColor="#86A97E"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toStartOf="@+id/radioGroup11"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -1096,6 +1125,9 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="35dp"
         android:text="협조적인"
+        android:textColor="#86A97E"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/radioGroup11"
@@ -1108,18 +1140,22 @@
         android:layout_marginTop="37dp"
         android:layout_marginEnd="2dp"
         android:text="이기적인"
+        android:textColor="#86A97E"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toStartOf="@+id/radioGroup13"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView31" />
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="*평소 자신과 비슷한 것을 골라주세요"
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="209dp"
+        android:layout_height="109dp"
+        android:layout_marginTop="104dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/text4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

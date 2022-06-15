@@ -91,6 +91,7 @@ class KakaoMap : AppCompatActivity() {
                 // GPS가 켜져있을 경우
                 permissionCheck()
                 Log.d("CheckCurrentLocation", "값아 잘 넘어왔니? 현재 내 위치 값: ${array[1]}")
+                Log.d("CheckCurrentLocation", "값 체크: ${array[1]} , $final_result")
 
                 searchKeyword("${array[1]} $final_result")
 
@@ -253,10 +254,10 @@ class KakaoMap : AppCompatActivity() {
                 // 통신 성공 (검색 결과는 response.body()에 담겨있음)
                 Log.d("Test", "Raw: ${response.raw()}")
                 Log.d("Test", "Body: ${response.body()}")
-                Log.d("Test", "Body: ${response.body()}")
                 search_result = response.body().toString()
+                Log.d("Test", "Body: $search_result")
                 var arr = search_result.split("=",",")
-                Log.d("Test", "$arr")
+                Log.d("Test", "테스트 $arr")
 
 
                 arr[2].toString() +"\n"+ arr[4].toString()
